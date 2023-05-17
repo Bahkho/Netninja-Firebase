@@ -10,13 +10,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Hello from "./pages/Hello";
 import Bye from "./pages/Bye";
+import Info from "./pages/Info";
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Hello />} />
-        <Route path="/homepage" element={<Bye />} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/logout" element={<Bye />} />
       </Routes>
     </Router>
   );
