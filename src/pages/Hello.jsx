@@ -31,7 +31,7 @@ const Hello = () => {
 
   return (
     <div className="flex flex-col gap-8 justify-center items-center text-white mt-8">
-      <h1 className="font-bold underline">Welcome To My Course</h1>
+      <h1 className="font-bold">Hello 👋🏾</h1>
       <input
         type="email"
         placeholder="Email..."
@@ -47,7 +47,7 @@ const Hello = () => {
       <button className=" bg-slate-700 px-4 py-2 w-[30%]">
         Sign In With Your Email
       </button>
-      <div className="flex flex-row justify-between w-[30%]">
+      <div className="flex flex-row justify-between w-[30%] gap-2">
         <button className=" bg-slate-700 px-4 py-2" onClick={signIn}>
           Sign Up With Your Email
         </button>

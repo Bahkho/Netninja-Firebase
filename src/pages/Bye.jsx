@@ -17,7 +17,7 @@ const Bye = () => {
   };
 
   return (
-    <div className="flex flex-col gap-8 justify-center items-center text-white w-[30%] mx-auto mt-8">
+    <div className="flex flex-col gap-8 justify-center items-center text-white max-w-[30%] mx-auto mt-8">
       <h1 className="font-bold underline">See You Next Time</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
