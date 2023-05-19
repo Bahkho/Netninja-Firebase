@@ -1,2 +1,3 @@
-Users should be able to sign in after sign up 
 protect /info and /logout page if user is not authenticated (redirect to "/")
+storage of files to firebase
+Deploy to firebase hosting

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../config/Firebase";
-
+//-----------------------------------------------------------------------------------------
 const Bye = () => {
   const navigate = useNavigate();
   console.log(auth?.currentUser?.email);
@@ -15,6 +15,7 @@ const Bye = () => {
       console.error(err);
     }
   };
+  //-----------------------------------------------------------------------------------------
 
   return (
     <div className="flex flex-col gap-8 justify-center items-center text-white max-w-[30%] mx-auto mt-8">
