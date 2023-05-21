@@ -1,17 +1,21 @@
 import { useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
 import { auth } from "../config/Firebase";
+import { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
 //-----------------------------------------------------------------------------------------
 const Bye = () => {
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { logout } = useAuth();
   console.log(auth?.currentUser?.email);
 
   const logOut = async () => {
     try {
-      await signOut(auth);
+      await logout(auth);
       navigate("/");
       // return <Navigate to="/" replace={true} />;
     } catch (err) {
+      setError(err.message);
       console.error(err);
     }
   };

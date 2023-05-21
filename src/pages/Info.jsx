@@ -20,6 +20,8 @@ const Info = () => {
   const [receivedAnOscar, setReceivedAnOscar] = useState(false);
   //update series title
   const [updateSeriesTitle, setUpdateSeriesTitle] = useState("");
+  //error message
+  const [error, setError] = useState("");
   //-----------------------------------------------------------------------------------------
   const seriesCollectionRef = collection(database, "series");
   console.log(auth?.currentUser?.email);
@@ -35,6 +37,7 @@ const Info = () => {
       // console.log(filteredData);
       setSeriesList(filteredData);
     } catch (err) {
+      setError(err.message);
       console.error(err);
     }
   };
@@ -56,6 +59,7 @@ const Info = () => {
       });
       getSeriesList();
     } catch (err) {
+      setError(err.message);
       console.error(err);
     }
   };
@@ -66,6 +70,7 @@ const Info = () => {
       await deleteDoc(seriesDocRef);
       getSeriesList();
     } catch (err) {
+      setError(err.message);
       console.error(err);
     }
   };
@@ -78,6 +83,7 @@ const Info = () => {
       });
       getSeriesList();
     } catch (err) {
+      setError(err.message);
       console.error(err);
     }
   };

@@ -1,3 +1,5 @@
-protect /info and /logout page if user is not authenticated (redirect to "/")
+authentication with firebase sign up email verification
+password reset and design the interface {forget password}
+display error on dom 
 storage of files to firebase
 Deploy to firebase hosting
