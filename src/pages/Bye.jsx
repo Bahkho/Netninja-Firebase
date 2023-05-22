@@ -7,7 +7,7 @@ const Bye = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { logout } = useAuth();
-  console.log(auth?.currentUser?.email);
+  // console.log(auth?.currentUser?.email);
 
   const logOut = async () => {
     try {
@@ -16,7 +16,7 @@ const Bye = () => {
       // return <Navigate to="/" replace={true} />;
     } catch (err) {
       setError(err.message);
-      console.error(err);
+      // console.error(err);
     }
   };
   //-----------------------------------------------------------------------------------------
@@ -24,6 +24,7 @@ const Bye = () => {
   return (
     <div className="flex flex-col gap-8 justify-center items-center text-white max-w-[30%] mx-auto mt-8">
       <h1 className="font-bold underline">See You Next Time</h1>
+      {error && <p className="text-red-500">{error}</p>}
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
         incidunt molestias, omnis reprehenderit possimus officiis earum sequi

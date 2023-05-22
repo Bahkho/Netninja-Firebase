@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { auth } from "../config/Firebase";
 import { useAuth } from "../contexts/AuthContext";
+import { sendEmailVerification } from "firebase/auth";
 //-----------------------------------------------------------------------------------------
 const Hello = () => {
   const navigate = useNavigate();
@@ -11,16 +11,17 @@ const Hello = () => {
   const { createUser, googlelogin } = useAuth();
   //-----------------------------------------------------------------------------------------
 
-  console.log(auth?.currentUser?.email);
+  // console.log(auth?.currentUser?.email);
 
   const signUp = async () => {
     try {
-      await createUser(email, password);
-      navigate("/info");
-      // <Navigate to="/homepage" replace={true} />;
+      const userCredential = await createUser(email, password);
+      //  await userCredential.user.confirmEmail();
+      await sendEmailVerification(userCredential.user);
+      alert("Check your email for verification to sign in");
+      navigate("/login");
     } catch (error) {
       setError(error.message);
-      console.error(error);
     }
   };
   //-----------------------------------------------------------------------------------------
@@ -31,7 +32,7 @@ const Hello = () => {
       // return <Navigate to="/homepage" replace={true} />;
     } catch (error) {
       setError(error.message);
-      console.error(error);
+      // console.error(error);
     }
   };
 
@@ -39,6 +40,7 @@ const Hello = () => {
   return (
     <div className="flex flex-col gap-8 justify-center items-center text-white mt-8">
       <h1 className="font-bold">Sign Up 👋🏾</h1>
+      {error && <p className="text-red-500">{error}</p>}
       <input
         type="email"
         placeholder="Email..."

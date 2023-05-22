@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { auth } from "../config/Firebase";
 import { useAuth } from "../contexts/AuthContext";
 //-----------------------------------------------------------------------------------------
 const Helloo = () => {
@@ -11,7 +10,7 @@ const Helloo = () => {
   const { login } = useAuth();
   //-----------------------------------------------------------------------------------------
 
-  console.log(auth?.currentUser?.email);
+  // console.log(auth?.currentUser?.email);
 
   //-----------------------------------------------------------------------------------------
   const signIn = async () => {
@@ -21,13 +20,14 @@ const Helloo = () => {
       // return <Navigate to="/homepage" replace={true} />;
     } catch (err) {
       setError(err.message);
-      console.error(err);
+      // console.error(err);
     }
   };
   //-----------------------------------------------------------------------------------------
   return (
     <div className="flex flex-col gap-8 justify-center items-center text-white mt-8">
       <h1 className="font-bold">Sign In 👋🏾</h1>
+      {error && <p className="text-red-500">{error}</p>}
       <input
         type="email"
         placeholder="Email..."

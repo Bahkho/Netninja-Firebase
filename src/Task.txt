@@ -1,0 +1,4 @@
+authentication with firebase sign up email verification
+storage of files or images to firebase
+using of strong password
+Deploy to firebase hosting

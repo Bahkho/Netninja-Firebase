@@ -24,7 +24,7 @@ const Info = () => {
   const [error, setError] = useState("");
   //-----------------------------------------------------------------------------------------
   const seriesCollectionRef = collection(database, "series");
-  console.log(auth?.currentUser?.email);
+  // console.log(auth?.currentUser?.email);
 
   //-----------------------------------------------------------------------------------------
   const getSeriesList = async () => {
@@ -38,7 +38,7 @@ const Info = () => {
       setSeriesList(filteredData);
     } catch (err) {
       setError(err.message);
-      console.error(err);
+      // console.error(err);
     }
   };
   useEffect(() => {
@@ -60,7 +60,7 @@ const Info = () => {
       getSeriesList();
     } catch (err) {
       setError(err.message);
-      console.error(err);
+      // console.error(err);
     }
   };
   //-----------------------------------------------------------------------------------------
@@ -71,7 +71,7 @@ const Info = () => {
       getSeriesList();
     } catch (err) {
       setError(err.message);
-      console.error(err);
+      // console.error(err);
     }
   };
   //-----------------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ const Info = () => {
       getSeriesList();
     } catch (err) {
       setError(err.message);
-      console.error(err);
+      // console.error(err);
     }
   };
   //-----------------------------------------------------------------------------------------
@@ -92,6 +92,7 @@ const Info = () => {
   return (
     <div className="flex flex-col gap-8 justify-center items-center text-white max-w-[30%] mx-auto my-8">
       <h1 className=" text-2xl font-bold underline">Welcome</h1>
+      {error && <p className="text-red-500">{error}</p>}
       <div className="flex flex-row justify-between text-black gap-4 w-full">
         <input
           type="text"

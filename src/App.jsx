@@ -23,13 +23,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Hello />} />
           <Route path="/login" element={<Helloo />} />
-          <Route path="/forgetpassword" element={<Forgetpassword />} />
           <Route element={<SecureRoutes />}>
-            {/* <SecureRoutes> */}
             <Route path="/info" element={<Info />} />
             <Route path="/logout" element={<Bye />} />
-            {/* </SecureRoutes> */}
           </Route>
+          <Route path="/forgetpassword" element={<Forgetpassword />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
