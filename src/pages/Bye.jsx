@@ -7,13 +7,11 @@ const Bye = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { logout } = useAuth();
-  // console.log(auth?.currentUser?.email);
 
   const logOut = async () => {
     try {
       await logout(auth);
       navigate("/");
-      // return <Navigate to="/" replace={true} />;
     } catch (err) {
       setError(err.message);
       // console.error(err);

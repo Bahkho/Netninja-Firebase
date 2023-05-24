@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+
 //-----------------------------------------------------------------------------------------
 const Helloo = () => {
   const navigate = useNavigate();
@@ -10,14 +11,17 @@ const Helloo = () => {
   const { login } = useAuth();
   //-----------------------------------------------------------------------------------------
 
-  // console.log(auth?.currentUser?.email);
+  // console.log(auth?.currentUser?.emailVerified);
 
   //-----------------------------------------------------------------------------------------
   const signIn = async () => {
     try {
-      await login(email, password);
-      navigate("/info");
-      // return <Navigate to="/homepage" replace={true} />;
+      const userCredential = await login(email, password);
+      if (userCredential.user.emailVerified) {
+        navigate("/info");
+      } else {
+        setError("Please verify your email to sign in");
+      }
     } catch (err) {
       setError(err.message);
       // console.error(err);

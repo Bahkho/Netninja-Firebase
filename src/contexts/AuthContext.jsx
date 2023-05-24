@@ -7,7 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
   sendPasswordResetEmail,
-  // sendEmailVerification,
+  sendEmailVerification,
 } from "firebase/auth";
 //------------------------------------------------------------
 const UserContext = createContext();
@@ -36,9 +36,9 @@ export const AuthProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email);
   };
   //------------------------------------------------------------
-  // const confirmEmail = () => {
-  //   return sendEmailVerification(auth, email);
-  // };
+  const confirmEmail = (email) => {
+    return sendEmailVerification(email);
+  };
   //------------------------------------------------------------
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (userInfo) => {
@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
     logout,
     currentUser,
     resetPassword,
-    // confirmEmail,
+    confirmEmail,
   };
 
   return (

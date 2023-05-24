@@ -1,23 +1,19 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { sendEmailVerification } from "firebase/auth";
 //-----------------------------------------------------------------------------------------
 const Hello = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { createUser, googlelogin } = useAuth();
+  const { createUser, googlelogin, confirmEmail } = useAuth();
   //-----------------------------------------------------------------------------------------
-
-  // console.log(auth?.currentUser?.email);
 
   const signUp = async () => {
     try {
       const userCredential = await createUser(email, password);
-      //  await userCredential.user.confirmEmail();
-      await sendEmailVerification(userCredential.user);
+      await confirmEmail(userCredential.user);
       alert("Check your email for verification to sign in");
       navigate("/login");
     } catch (error) {
@@ -29,7 +25,6 @@ const Hello = () => {
     try {
       await googlelogin();
       navigate("/info");
-      // return <Navigate to="/homepage" replace={true} />;
     } catch (error) {
       setError(error.message);
       // console.error(error);
