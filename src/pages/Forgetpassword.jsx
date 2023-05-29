@@ -26,11 +26,14 @@ const Forgetpassword = () => {
       <input
         type="email"
         placeholder="Email..."
-        className="p-2 w-[30%] text-slate-700 "
+        className="p-2 w-[90%] md:w-[30%] text-slate-700 "
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <button className=" bg-slate-700 px-4 py-2 w-[30%]" onClick={reset}>
+      <button
+        className=" bg-slate-700 px-4 py-2 w-[90%] md:w-[30%]"
+        onClick={reset}
+      >
         Reset Password
       </button>
       <p>

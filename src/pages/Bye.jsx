@@ -20,21 +20,16 @@ const Bye = () => {
   //-----------------------------------------------------------------------------------------
 
   return (
-    <div className="flex flex-col gap-8 justify-center items-center text-white max-w-[30%] mx-auto mt-8">
-      <h1 className="font-bold underline">See You Next Time</h1>
+    <div className="flex flex-col gap-8 justify-center items-center text-white max-w-[90%] md:max-w-[30%] mx-auto mt-8">
+      <h1 className="font-bold underline">See You Next Time 👋🏾</h1>
       {error && <p className="text-red-500">{error}</p>}
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-        incidunt molestias, omnis reprehenderit possimus officiis earum sequi
-        veritatis aperiam corporis adipisci at culpa eum natus nobis assumenda
-        cupiditate aliquid numquam?
+        <b>Thank you for using our application.</b> We appreciate your time and
+        trust in our platform. Feel free to return whenever you're ready to
+        continue your journey with us. Remember, your data is safe and secure
+        until you log in again. Have a great day!
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-        incidunt molestias, omnis reprehenderit possimus officiis earum sequi
-        veritatis aperiam corporis adipisci at culpa eum natus nobis assumenda
-        cupiditate aliquid numquam?
-      </p>
+
       <button className=" bg-slate-700 px-4 py-2 w-full" onClick={logOut}>
         Logout
       </button>

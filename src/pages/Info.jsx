@@ -90,7 +90,7 @@ const Info = () => {
   //-----------------------------------------------------------------------------------------
   // console.log(releasedDate);
   return (
-    <div className="flex flex-col gap-8 justify-center items-center text-white max-w-[30%] mx-auto my-8">
+    <div className="flex flex-col gap-8 justify-center items-center text-white max-w-[90%] lg:max-w-[30%] mx-auto my-8">
       <h1 className=" text-2xl font-bold underline">Welcome</h1>
       {error && <p className="text-red-500">{error}</p>}
       <div className="flex flex-row justify-between text-black gap-4 w-full">

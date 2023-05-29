@@ -34,22 +34,22 @@ const Hello = () => {
   //-----------------------------------------------------------------------------------------
   return (
     <div className="flex flex-col gap-8 justify-center items-center text-white mt-8">
-      <h1 className="font-bold">Sign Up 👋🏾</h1>
+      <h1 className="font-bold">Sign Up</h1>
       {error && <p className="text-red-500">{error}</p>}
       <input
         type="email"
         placeholder="Email..."
-        className="p-2 w-[30%] text-slate-700 "
+        className="p-2 w-[90%] md:w-[30%] text-slate-700 "
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
         type="password"
         placeholder="Password..."
-        className="p-2 w-[30%] text-slate-700 "
+        className="p-2 w-[90%] md:w-[30%] text-slate-700 "
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <div className="flex flex-row justify-between w-[30%] gap-2">
+      <div className="flex flex-col w-[90%] gap-2 md:flex-row justify-between md:w-[30%]">
         <button className=" bg-slate-700 px-4 py-2 " onClick={signUp}>
           Sign Up With Your Email
         </button>
