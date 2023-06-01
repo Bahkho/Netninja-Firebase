@@ -33,7 +33,7 @@ const Hello = () => {
 
   //-----------------------------------------------------------------------------------------
   return (
-    <div className="flex flex-col gap-8 justify-center items-center text-white mt-8">
+    <div className="flex flex-col gap-8 justify-center items-center text-white mt-8 max-w-[1280px] mx-auto">
       <h1 className="font-bold">Sign Up</h1>
       {error && <p className="text-red-500">{error}</p>}
       <input
