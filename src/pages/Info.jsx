@@ -30,10 +30,12 @@ const Info = () => {
   const getSeriesList = async () => {
     try {
       const data = await getDocs(seriesCollectionRef);
-      const filteredData = data.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
+      const filteredData = data.docs
+        .filter((doc) => doc.data().userId === auth?.currentUser?.uid)
+        .map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
       // console.log(filteredData);
       setSeriesList(filteredData);
     } catch (err) {
