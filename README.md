@@ -1,8 +1,8 @@
 ## Task To Complete
 
-## `Task To Finish`
+## `React & Firebase practice`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Note: this is an `unfinished` project.**
 
 - Storage of files or images to firebase
 - Using of strong password to sign up
